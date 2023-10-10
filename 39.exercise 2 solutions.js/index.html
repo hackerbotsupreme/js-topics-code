@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Snake, Water, Gun</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <script src="script.js"></script>
+
+  <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+</body>
+
+</html>
+
+{/* script.js  */}
+let user = prompt("Enter S, W or G")
+let cpuI = Math.floor(Math.random() * 3);
+let cpu = ["S", "W", "G"][cpuI]
+
+const match = (cpu, user)=>{
+  if(cpu === user){
+    return "Nobody"
+  }
+  else if(cpu === "S" && user==="W"){
+    return "cpu"
+  }
+  else if(cpu === "S" && user==="G"){
+    return "user"
+  }
+  else if(cpu === "G" && user==="W"){
+    return "user"
+  }
+  else if(cpu === "G" && user==="S"){
+    return "cpu"
+  }
+  else if(cpu === "W" && user==="S"){
+    return "user"
+  }
+  else if(cpu === "W" && user==="G"){
+    return "cpu"
+  }
+}
+let result = match(cpu, user)
+document.write(`CPU:${cpu} <br> User:${user} <br>The winner is: ${result.toUpperCase()}` )
+// https://www.amazon.in/g/9P82UKN45LPQ6N6V - Rs 500 gift voucher
+
